@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: 'Audiowide', cursive;
+  letter-spacing: 3px;
+  background-color: #607D8B;
+  color: #FFC107;
+  margin: 0; }
+
+h1, h2, h3 {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5), 0px 8px 13px rgba(0, 0, 0, 0.15), 0px 18px 23px rgba(0, 0, 0, 0.1); }
+
+h3 {
+  width: 600px;
+  position: absolute;
+  left: calc(50% - 300px);
+  margin-top: 5px;
+  text-shadow: 0px 0px 10px black, 0px 0px 12px black; }
+
+.hidden {
+  display: none; }
+
+div {
+  width: 100px;
+  margin: 120px 30px;
+  position: absolute; }
+
+#speed {
+  right: 0; }
+
+button {
+  font-family: inherit;
+  letter-spacing: 1px;
+  font-size: 100%;
+  text-transform: uppercase;
+  background-color: #212121;
+  color: #86ce2f;
+  outline: none;
+  border: none;
+  float: left;
+  width: 100px;
+  height: 40px;
+  margin: 10px 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6), 0 0 23px rgba(0, 0, 0, 0.3), 0 0 43px rgba(0, 0, 0, 0.1); }
+  button:hover {
+    cursor: pointer;
+    background-color: #FFC107;
+    color: #607D8B; }
+
+.set {
+  background-color: #FFC107;
+  color: #607D8B; }
+
+table {
+  margin: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6), 0 0 23px rgba(0, 0, 0, 0.3), 0 0 43px rgba(0, 0, 0, 0.1); }
+
+tr {
+  height: 30px; }
+  tr:first-of-type td, tr:last-of-type td {
+    background-color: #212121; }
+
+td {
+  font-size: 0;
+  width: 30px;
+  background-color: #607D8B; }
+  td:first-of-type, td:last-of-type {
+    background-color: #212121; }
+
+.food {
+  background-color: #86ce2f;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(134, 206, 47, 0.6), 0 0 15px rgba(134, 206, 47, 0.3); }
+
+.superfood {
+  background-color: #03a9f4;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(3, 169, 244, 0.6), 0 0 15px rgba(3, 169, 244, 0.3); }
+
+.active {
+  background-color: #FFC107;
+  border-radius: 30%;
+  box-shadow: 0 0 8px rgba(255, 155, 55, 0.6), 0 0 23px rgba(255, 155, 55, 0.3), 0 0 43px rgba(255, 155, 55, 0.1); }
+
+@media only screen and (min-width: 1680px) {
+  div {
+    width: 100px;
+    margin: 120px 60px; } }
+@media only screen and (min-width: 1920px) {
+  div {
+    width: 100px;
+    margin: 120px 100px; } }
+
+/*# sourceMappingURL=style.css.map */
