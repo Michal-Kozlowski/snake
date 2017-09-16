@@ -107,8 +107,9 @@ function fade(){
 	table.rows[headY].cells[headX].textContent = length;
 	for (var i = 0; i < sizeY; i++) {
 		for (var j = 0; j < sizeX; j++) {
-			table.rows[i].cells[j].textContent--;
-			if(table.rows[i].cells[j].textContent < "0") {
+			if(table.rows[i].cells[j].textContent > "0"){
+				table.rows[i].cells[j].textContent--;
+			} else {
 				table.rows[i].cells[j].classList.remove("active");
 			}
 		}
@@ -121,7 +122,7 @@ function gameOver() {
 	clearInterval(game);		 
 	hello.textContent = "press space to play with the snake";
 	len.textContent = "";
-	lenHidden.textContent = length + " (" + Math.floor(length/area*100) + "% of board)";
+	lenHidden.textContent = length + " (" + Math.floor(length/area*100) + "% of the board)";
 	h3.classList.remove("hidden");
 }
 
