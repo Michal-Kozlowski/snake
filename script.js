@@ -62,15 +62,19 @@ function init(){
 // choose direction (not backwards)
 document.addEventListener("keydown", function(e){
 	if((e.keyCode === 37 || e.keyCode === 65) && lastMoveDirection !== "right") {
+		e.preventDefault();
 		direction = "left";
 	}
 	else if((e.keyCode === 38 || e.keyCode === 87) && lastMoveDirection !== "down") {
+		e.preventDefault();
 		direction = "up";
 	}	
 	else if((e.keyCode === 39 || e.keyCode === 68) && lastMoveDirection !== "left") {
+		e.preventDefault();
 		direction = "right";
 	}	
 	else if((e.keyCode === 40 || e.keyCode === 83) && lastMoveDirection !== "up") {
+		e.preventDefault();
 		direction = "down";
 	}
 	if(e.keyCode === 32 && !gameIsOn) {

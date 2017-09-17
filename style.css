@@ -20,7 +20,7 @@ h3 {
   width: 600px;
   position: absolute;
   left: calc(50% - 300px);
-  margin-top: 5px;
+  margin-top: 1px;
   text-shadow: 0px 0px 10px black, 0px 0px 12px black; }
 
 .hidden {
@@ -62,13 +62,13 @@ table {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6), 0 0 23px rgba(0, 0, 0, 0.3), 0 0 43px rgba(0, 0, 0, 0.1); }
 
 tr {
-  height: 30px; }
+  height: 23px; }
   tr:first-of-type td, tr:last-of-type td {
     background-color: #212121; }
 
 td {
   font-size: 0;
-  width: 30px;
+  width: 23px;
   background-color: #607D8B; }
   td:first-of-type, td:last-of-type {
     background-color: #212121; }
@@ -96,5 +96,23 @@ td {
   div {
     width: 100px;
     margin: 120px 100px; } }
+@media only screen and (min-height: 800px) {
+  h3 {
+    margin-top: 2px; }
+
+  tr {
+    height: 25px; }
+
+  td {
+    width: 25px; } }
+@media only screen and (min-height: 900px) {
+  h3 {
+    margin-top: 5px; }
+
+  tr {
+    height: 30px; }
+
+  td {
+    width: 30px; } }
 
 /*# sourceMappingURL=style.css.map */

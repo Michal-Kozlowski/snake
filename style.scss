@@ -30,7 +30,7 @@ h3 {
   width: 600px;
   position: absolute;
   left: calc(50% - 300px);
-  margin-top: 5px;
+  margin-top: 1px;
   text-shadow:  0px 0px 10px rgb(0, 0, 0),
                 0px 0px 12px rgb(0, 0, 0);
 }
@@ -85,7 +85,7 @@ table {
 }
 
 tr {
-	height: 30px;
+	height: 23px;
   &:first-of-type td, &:last-of-type td {
     background-color: $background-color;
   }
@@ -93,7 +93,7 @@ tr {
 
 td {
   font-size: 0;
-	width: 30px;
+	width: 23px;
 	background-color: $primary-color;
   &:first-of-type, &:last-of-type {
     background-color: $background-color;
@@ -135,5 +135,35 @@ td {
   div {
     width: 100px;
     margin: 120px 100px;
+  }
+}
+
+//-----------------------LOW HEIGHT-----------------
+@media only screen and (min-height: 800px) {
+  h3 {
+    margin-top: 2px
+  }
+
+  tr {
+    height: 25px;
+  }
+
+  td {
+    width: 25px;
+  }
+}
+
+//-----------------------NORMAL HEIGHT (HD)-----------------
+@media only screen and (min-height: 900px) {
+  h3 {
+    margin-top: 5px
+  }
+
+  tr {
+    height: 30px;
+  }
+
+  td {
+    width: 30px;
   }
 }
