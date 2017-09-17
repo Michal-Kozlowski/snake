@@ -1,10 +1,11 @@
 var sizeX = 25;
 var sizeY = 17;
-var headX = (sizeX-1)/2;
-var headY = (sizeY-1)/2;
-var tailX = (sizeX-1)/2; 
-var tailY = (sizeY-1)/2;
+var headX;
+var headY;
+var tailX; 
+var tailY;
 var direction = "right";
+var lastMoveDirection = "right";
 var length = 3;
 var interval = 75;
 var gameIsOn = false;
@@ -29,6 +30,7 @@ var sizeButtons = document.querySelectorAll("#size button");
 var lenHidden = document.querySelector("#lenHidden");
 var h3 = document.querySelector("h3");
 
+
 // create map
 function createMap(){
 	for (var i = 0; i < sizeY; i++) {
@@ -45,9 +47,9 @@ function init(){
 	game = setInterval(move, interval);
 	gameIsOn = true;
 	hello.textContent = "snakes length: ";
-	headX = (sizeX-1)/2;
+	headX = (sizeX-1)/2 - 5;
 	headY = (sizeY-1)/2;
-	tailX = (sizeX-1)/2; 
+	tailX = (sizeX-1)/2 - 5; 
 	tailY = (sizeY-1)/2;
 	length = 3;	
 	direction = "right";
@@ -63,16 +65,16 @@ function init(){
 
 // choose direction (not backwards)
 document.addEventListener("keydown", function(e){
-	if(e.keyCode === 37 && direction !== "right") {
+	if((e.keyCode === 37 || e.keyCode === 65) && lastMoveDirection !== "right") {
 		direction = "left";
 	}
-	else if(e.keyCode === 38 && direction !== "down") {
+	else if((e.keyCode === 38 || e.keyCode === 87) && lastMoveDirection !== "down") {
 		direction = "up";
 	}	
-	else if(e.keyCode === 39 && direction !== "left") {
+	else if((e.keyCode === 39 || e.keyCode === 68) && lastMoveDirection !== "left") {
 		direction = "right";
 	}	
-	else if(e.keyCode === 40 && direction !== "up") {
+	else if((e.keyCode === 40 || e.keyCode === 83) && lastMoveDirection !== "up") {
 		direction = "down";
 	}
 	if(e.keyCode === 32 && !gameIsOn) {
@@ -85,14 +87,18 @@ function move(){
 	placeFood();
 	if(direction === "left") {
 		headX--;
+		lastMoveDirection = direction;
 	}
 	else if(direction === "up") {
 		headY--;
+		lastMoveDirection = direction;
 	}	
 	else if(direction === "right") {
 		headX++;
+		lastMoveDirection = direction;
 	}	
 	else if(direction === "down") {
+		lastMoveDirection = direction;
 		headY++;
 	}
 	eat();
@@ -223,20 +229,25 @@ function newMap(x,y){
 }
 
 small.addEventListener("click", function(){
-	size();
-	this.classList.add("set");
-	newMap(17,15);
+	if(!gameIsOn){
+		size();
+		this.classList.add("set");
+		newMap(17,15);	
+	}
 });
 
 normalSize.addEventListener("click", function(){
-	size();
-	this.classList.add("set");
-	newMap();
-	newMap(25,19);
+	if(!gameIsOn){
+		size();
+		this.classList.add("set");
+		newMap(25,19);
+	}
 });
 
 large.addEventListener("click", function(){
-	size();
-	this.classList.add("set");
-	newMap(41,25);
+	if(!gameIsOn){
+		size();
+		this.classList.add("set");
+		newMap(41,25);
+	}
 });
