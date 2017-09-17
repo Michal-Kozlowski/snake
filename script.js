@@ -2,11 +2,9 @@ var sizeX = 25;
 var sizeY = 17;
 var headX;
 var headY;
-var tailX; 
-var tailY;
 var direction = "right";
 var lastMoveDirection = "right";
-var length = 3;
+var length;
 var interval = 75;
 var gameIsOn = false;
 var game;
@@ -49,8 +47,6 @@ function init(){
 	hello.textContent = "snakes length: ";
 	headX = (sizeX-1)/2 - 5;
 	headY = (sizeY-1)/2;
-	tailX = (sizeX-1)/2 - 5; 
-	tailY = (sizeY-1)/2;
 	length = 3;	
 	direction = "right";
 	placeFood();	
@@ -155,13 +151,13 @@ function createFood(){
 // place food
 function placeFood(){
 	createFood();
-	while(table.rows[food[1]].cells[food[0]].classList.contains("active")){
-		createFood();
-		if(!isSuperFood && !isFood){
-			table.rows[food[1]].cells[food[0]].classList.add("superfood");
-			isSuperFood = true;
+	if(!isSuperFood && !isFood && table.rows[food[1]].cells[food[0]].classList.contains("active")){
+		while(table.rows[food[1]].cells[food[0]].classList.contains("active")){
+			createFood();
 		}
-	}	
+		table.rows[food[1]].cells[food[0]].classList.add("superfood");
+		isSuperFood = true;
+	}
 	if(!isSuperFood && !isFood){
 		table.rows[food[1]].cells[food[0]].classList.add("food");
 		isFood = true;
